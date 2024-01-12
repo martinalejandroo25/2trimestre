@@ -2,18 +2,18 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
-    public void main(String[] args) {
+    /*Realiza una clase Temperatura, la cual convierta grados Celsius a Farenheit y viceversa. Para ello, crea dos
+métodos double celsiusToFarenheit(double celsius) y double farenheitToCelsius(double
+farenheit). La clase Temperatura no tendrá ninguna propiedad, solo esos dos métodos.
+En la construcción ten en cuenta las siguientes fórmulas:
+Farenheit a Celsius C = (F – 32)/1,8
+- Celsius a Farenheit F = (1,8)C + 32*/
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Son Celsius o Fahrenheit? (C o F)");
-        String medida = sc.nextLine();
-        System.out.println("Dame entonces la temperatura exacta que quieres pasar");
-        double temperatura = Double.parseDouble(sc.nextLine());
-        if (Objects.equals(medida, "C") || Objects.equals(medida, "c")) {
-            temperatura nuevatemp = new temperatura();
-            System.out.println("A Fahrenheit es " + nuevatemp);
-        } else if (Objects.equals(medida, "F") || Objects.equals(medida, "f")) {
-            temperatura.farenheitToCelsius nuevatemp = new temperatura.farenheitToCelsius();
-            System.out.println("A Celsius es " + nuevatemp);
-        }
+        double temperatura;
+        System.out.println("Dame la medida original y la pasaré a la otra C->F o F->C");
+        string medida = sc.nextLine();
+
+
     }
 }
