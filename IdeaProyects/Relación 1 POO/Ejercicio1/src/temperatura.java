@@ -1,7 +1,10 @@
-public class temperatura {
+public class Temperatura {
     public static double celsiusToFarenheit(double celsius) {
-        return (1.8*celsius)+32
+        double farenheit = (1.8)*celsius+32;
+                return farenheit;
     }
-    public static double FarenheitToCelsius (double faren)
-        return (faren-32)/1.8;
+    public static double farenheitToCelsius(double farenheit) {
+        double celsius = (farenheit-32)/1.8;
+                return celsius;
+    }
 }
