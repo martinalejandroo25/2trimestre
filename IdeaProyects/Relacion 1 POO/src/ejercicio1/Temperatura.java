@@ -1,3 +1,5 @@
+package ejercicio1;
+
 public class Temperatura {
     public static double celsiusToFarenheit(double celsius) {
         double farenheit = (1.8)*celsius+32;

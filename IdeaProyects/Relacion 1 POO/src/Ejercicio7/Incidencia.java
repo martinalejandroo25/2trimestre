@@ -1,3 +1,5 @@
+package Ejercicio7;
+
 public class Incidencia {
     enum Estado {ABIERTA, ENPROCESO, RESUELTA}
     private String codigo;

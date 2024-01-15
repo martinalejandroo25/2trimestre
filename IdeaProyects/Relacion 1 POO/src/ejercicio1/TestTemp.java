@@ -1,3 +1,5 @@
+package ejercicio1;
+
 import java.util.Scanner;
 public class TestTemp {
     /*Realiza una clase Temperatura, la cual convierta grados Celsius a Farenheit y viceversa. Para ello, crea dos
