@@ -1,16 +1,22 @@
-package Ejercicio2;
+import java.util.Objects;
+
 public class Coche {
-    private int velocidad;      //atributo
+    private int velocidad; // atributo
+
     Coche() {
-        velocidad = 0;          //Constructor
-        }   
-    public int getVelocidad(){
-        return velocidad;
+        velocidad = 0; // Constructor
     }
+
+    public int getVelocidad() {
+        return velocidad; // atribut
+    }
+
     public void acelera(int mas) {
-        velocidad+=mas;
+        velocidad += mas;
     }
+
     public void frena(int menos) {
-        velocidad -=menos;
+        velocidad -= menos;
     }
+    
 }

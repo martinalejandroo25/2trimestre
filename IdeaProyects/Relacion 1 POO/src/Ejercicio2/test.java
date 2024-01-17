@@ -1,4 +1,3 @@
-package Ejercicio2;
 import java.util.Scanner;
 
 public class test {
@@ -15,14 +14,11 @@ public class test {
             } else if (accion.equals("f")) {
                 System.out.println("Cuanto? numero en km");
                 int sumaresta = Integer.parseInt(sc.nextLine());
-                Coche.frena(sumaresta)
+                Coche.frena(sumaresta);
             }
         }
-            System.out.println("El coche va ahora a una velocidad de"+velocidad);
-            
-        }
-        System.out.println("El coche va ahora a una velocidad de"+velocidad);
+        System.out.println("El coche va ahora a una velocidad de" + velocidad);
+    
+
     }
-    
-    
 }

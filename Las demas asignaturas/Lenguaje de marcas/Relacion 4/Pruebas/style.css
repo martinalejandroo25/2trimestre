@@ -1,0 +1,38 @@
+#titulo {
+    color:tomato;
+}
+
+p.especial {
+    color: mediumseagreen;
+}
+
+p.texto {
+    color:slateblue;
+}
+
+div p {
+    color: aquamarine;
+}
+
+div h2, div h3 {
+    color:brown;
+}
+
+* { /*Selector universal (para todo el html)*/
+    font-size: 24px
+}
+
+
+/*.color {
+    color:  #f00;
+}
+.color {
+    color: #f00000;
+}
+.color {
+    color: rgb(255, 0, 0);
+}
+*/
+.color {
+    border: 5px black solid;
+}
