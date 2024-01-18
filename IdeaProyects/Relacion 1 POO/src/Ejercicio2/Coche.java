@@ -3,8 +3,8 @@ import java.util.Objects;
 public class Coche {
     private int velocidad; // atributo
 
-    Coche() {
-        velocidad = 0; // Constructor
+    Coche(int velocidad) {
+        this.velocidad = 0; // Constructor
     }
 
     public int getVelocidad() {
@@ -12,11 +12,11 @@ public class Coche {
     }
 
     public void acelera(int mas) {
-        velocidad += mas;
+        this.velocidad += mas;
     }
 
-    public void frena(int menos) {
-        velocidad -= menos;
+    public void freno(int menos) {
+        this.velocidad -= menos;
     }
     
 }

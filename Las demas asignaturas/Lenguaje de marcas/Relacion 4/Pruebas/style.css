@@ -35,4 +35,45 @@ div h2, div h3 {
 */
 .color {
     border: 5px black solid;
+
+/*  dotted
+    dashed
+    solid
+    double
+    groove
+    ridge
+    inset
+    outset
+    none
+    hidden
+*/
+border-style:solid; /*Estilo del borde, arriba se muestran los diferentes tipos*/
+border-color:blue; /*color del borde*/
+border-radius: 5px; /*para un borde más redondeado*/
+border-width: 5px; /*para el ancho del borde*/
+} 
+#fondo {
+    background-color: red;
+    /* opacity: 0.3; */
+    background-image: url('fondo.jpg');
+    background-size: 100px 100px;
+            /*tambien tienes: auto, cover, contain*/
+    background-repeat: no-repeat;
+            /*no-repeat
+            repeat-x se repite en el eje X
+            repeat-y se repite en el eje Y*/
+    background-position: center;
+            /*
+            center
+            top
+            right
+            bottom
+            left
+            */
+    /*También con: 
+    background: #f00 url('fondo.jpg') repeat-y center bottom / 100px 100px;*/
+}
+.margen {
+    background-color: chocolate;
+    margin:15px/*margin-top*/ 20px/*margin-right*/ 25px/*margin-bottom*/ 30px /*margin-left*/;
 }
