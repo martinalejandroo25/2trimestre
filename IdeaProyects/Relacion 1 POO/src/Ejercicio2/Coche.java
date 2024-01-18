@@ -1,3 +1,5 @@
+package Ejercicio2;
+
 import java.util.Objects;
 
 public class Coche {
