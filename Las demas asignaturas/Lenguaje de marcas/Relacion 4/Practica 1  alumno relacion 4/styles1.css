@@ -1,3 +1,36 @@
-#logo {
-    color
+#contenedor {
+    width: 95%;
+    background-color: rgb(240, 222, 222);
 }
+#logo {
+    color:aqua;
+    display: inline-block;
+}
+#menu {
+    list-style-type: none;
+    display: inline-block;
+    background-color: #c00;
+}
+#envoltura {
+
+}
+#contenido {
+
+}
+#primero {
+
+}
+#extra {
+width: 32%;
+float: right;
+background-color: rgba(255,255,0,0.2)
+}
+#extra img {
+    ;
+}
+#final {
+ text-decoration: #fff;
+ background-color: #c00;
+}
+
+/* uso de header y nav */
