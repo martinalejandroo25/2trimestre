@@ -1,4 +1,4 @@
-package EjerciciosPropuestos;
+package EjerciciosPropuestos.Tienda;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -13,7 +13,7 @@ import java.util.Objects;
     equals(nombre)
     addProducto(producto prod)
 }*/
-public abstract class Tienda {
+public class Tienda {
     private String nombre;
     private ArrayList<Producto> productos;
 
@@ -57,6 +57,8 @@ public abstract class Tienda {
     public int hashCode() {
         return Objects.hash(nombre, productos);
     }
-    Producto p1 = new Producto();
-    add.producto(p1 prod);
+    public void addProducto(Producto producto){
+
+    }
+
 }

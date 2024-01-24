@@ -1,4 +1,4 @@
-package EjerciciosPropuestos;
+package EjerciciosPropuestos.Tienda;
 
 import java.util.Objects;
 
