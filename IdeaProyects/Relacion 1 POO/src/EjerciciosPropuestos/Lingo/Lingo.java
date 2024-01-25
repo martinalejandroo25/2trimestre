@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class Lingo {
     private ArrayList<String> palabras = new ArrayList<>();
     private String palabrasAcertar;
+    private StringBuffer palabraIntento;
+
+    private static int partidasGanadas = 0;
 
     public Lingo() {
         palabras.add("Lunes");
@@ -14,18 +17,15 @@ public class Lingo {
         palabras.add("pedal");
         palabras.add("actor");
         palabras.add("censo");
+        palabras.add("arroz");
 
         int posicion = (int) (Math.random() * palabras.size());
         this.palabrasAcertar = palabras.get(posicion);
 
-        this.palabraIntento = new StringBuffer()
-        for (int i = 0; i < palabrasAcertar.length(); i++) {
-            if (this.palabrasAcertar.charAt(i) == palabras) {}
+        this.palabraIntento = new StringBuffer();
+        for (int i = 0; i < this.palabrasAcertar.length(); i++) {
+            this.palabraIntento.append("-");
         }
-    }
-
-    public ArrayList<String> getPalabras() {
-        return palabras;
     }
 
     public void setPalabras(ArrayList<String> palabras) {
@@ -45,7 +45,7 @@ public class Lingo {
     * @param palabra
     * @return El número de letras en la misma posición*/
 
-    public int comparar(String palabra) {
+    public int comprobar(String palabra) {
         if (palabra.length()!= 5) {
             System.out.println("La palabra introducida no tiene 5 caracteres");
             return 0;
@@ -56,5 +56,8 @@ public class Lingo {
                 aciertos++;
             }
         }
+        System.out.println(this.palabraIntento);
+
+        return aciertos;
     }
 }

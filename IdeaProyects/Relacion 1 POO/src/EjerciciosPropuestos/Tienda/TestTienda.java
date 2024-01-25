@@ -1,11 +1,23 @@
 package EjerciciosPropuestos.Tienda;
 
 public class TestTienda {
-    Producto p1 = new Producto("Producto1", 15);
-    Producto p2 = new Producto("Producto2", 15);
-    Producto p3 = new Producto("Producto3", 15);
+    public static void main(String[] args) {
+        Producto peluchepulpo = new Producto("PulpitoBipolar", 15);
+        Producto ssd255gb = new Producto("SSD255", 34);
+        Producto Pico4VR = new Producto("GafasPico4", 399);
 
-    Tienda tienda = new Tienda("MediaMark");
+        Tienda mediaMark = new Tienda("MediaMark");
 
-    tienda.addProducto
+        mediaMark.addProducto(peluchepulpo);
+        mediaMark.addProducto(ssd255gb);
+        mediaMark.addProducto(Pico4VR);
+
+        System.out.println(mediaMark);
+
+        for(Producto pr : mediaMark.getProductos()){
+            System.out.println(pr.getNombre() + " : " + pr.getPrecio() + "$");
+        }
+    }
+
+
 }

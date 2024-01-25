@@ -1,7 +1,6 @@
 package EjerciciosPropuestos.Tienda;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 /*Tienda{
     String nombre;
@@ -18,7 +17,8 @@ public class Tienda {
     private ArrayList<Producto> productos;
 
     public Tienda(String nombre) {
-
+        this.nombre = nombre;
+        this.productos = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -42,23 +42,16 @@ public class Tienda {
         final StringBuffer sb = new StringBuffer("Tienda{");
         sb.append("nombre='").append(nombre).append('\'');
         sb.append(", productos=").append(productos);
+        sb.append('\n');
+        for (int i = 0; i < productos.size() ; i++) {
+            sb.append(productos.get(i));
+            sb.append("\n");
+        }
         sb.append('}');
         return sb.toString();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Tienda tienda)) return false;
-        return Objects.equals(nombre, tienda.nombre) && Objects.equals(productos, tienda.productos);
+    public void addProducto(Producto producto) {
+        this.productos.add(producto);
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(nombre, productos);
-    }
-    public void addProducto(Producto producto){
-
-    }
-
 }
