@@ -1,4 +1,4 @@
-package Ejercicio4;
+package ejercicio4;
 /*clase Finanzas
 convierta dólares a euros y viceversa
 propiedad se almacena cambio dólar-euro
