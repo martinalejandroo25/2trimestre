@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulario.css">
+    <title>Formulario HTML5</title>
+</head>
+<!--1. Crea una página web que contenga un formulario con los siguientes campos de información:
+
+[x]Nombre, con un control de tipo texto obligatorio y con autofoco.
+
+[x]Apellido 1, con un control de tipo texto obligatorio.
+
+[x]Apellido 2, con un control de tipo texto obligatorio.
+
+[x]Teléfono, con un control de tipo tel.
+
+[x]Correo electrónico, con un control de tipo email obligatorio.
+
+[x]URL, con un control de tipo url que muestre la ayuda "Escribe la URL de
+tu página web personal".
+
+[x]Tu localidad. Input tipo select, con las opciones Cuevas, Vera, Garrucha.
+-->
+<body>
+    <header><h1>Recogida de datos</h1></header>
+
+    <form method="get">
+        <fieldset class="fieldsetGrid">
+            <legend>A. Datos personales</legend>
+            <label for="nombre">
+                1. Nombre <input type="text" name="nombre" id="nombre">
+            </label>
+            <label for="apellido1">
+                2. Apellido1 <input type="text" name="apellido1" id="apellido1">
+            </label>
+            <label for="apellido2">
+                3. Apellido2 <input type="text" name="apellido2" id="apellido2">
+            </label>
+            <label for="telefono">
+                4. Telefono <input type="text" name="telefono" id="telefono">
+            </label>
+            <label for="correo">
+                5. Email <input type="text" name="correo" id="correo">
+            </label>
+            <label for="url">
+                6. URL <input type="text" name="url" id="url">
+            </label>
+            <label for="localidad">
+                7. localidad <select name="localidad" id="localidad">
+                    <option value="cuevas">Cuevas de Almanzora</option>
+                    <option value="vera">Vera pueblo/Vera Playa</option>
+                    <option value="Garrucha">Garrucha</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <!--2. Crearás otra agrupación que se denomine datos del pedido, con los siguientes campos:
+
+            [x]Fecha y hora, con un control de tipo datetime-local
+            [x]Número, con un control de tipo number que limite la entrada a un
+            valor entre -1 y 10.
+            [x]Color pedido, con un control de tipo color.-->
+        <fieldset>
+            <legend>B. Datos del pedido</legend>
+            <label for="fecha">
+                6. Fecha y hora <input type="datetime-local" name="fecha" id="fecha">
+            </label>
+            <label for="numero">
+                7. Número <input type="number" name="numero" id="numero">
+            </label>
+            <label for="color">
+                8. Color <input type="color" name="color" id="color">
+            </label>
+        </fieldset>
+        <!--3. Crearas otra agrupación que se denomine datos entrega, con los siguientes
+        campos:
+
+            [x]Fecha, con un control de tipo fecha.
+            [x]hora, con un control de tipo hora.
+            [x]Un checkbox con las opciones factura y certificado
+            [x]Y un radio con las opciones recoger en tienda o casa.
+        -->
+        <fieldset>
+            <legend>C. Datos de entrega</legend>
+            <label for="Fecha">
+                9. Fecha <input type="date" name="Fecha" id="Fecha">
+            </label>
+            <label for="hora">
+                10. Hora <input type="time" name="hora" id="hora">
+            </label>
+            <label for="factura">
+                11. Factura <input type="checkbox" name="factura" id="factura">
+            </label>
+            <label for="certificado">
+                12. Certificado <input type="checkbox" name="certificado" id="certificado">
+            </label>
+            <label for="recoger">
+                13. Recogida:
+                <input type="radio" name="recoger" id="recoger" value="tienda">tienda
+                <input type="radio" name="recoger" id="recoger" value="casa">Casa
+            </label>
+
+        </fieldset>
+        <!--4. Para finalizar incluirás otra agrupación con más información, donde incluirás:
+            [x]Término de búsqueda, con un control de tipo search.
+            [x]Un área de texto para dejar comentarios adicionales
+            [x]Un botón de envío.-->
+            <fieldset>
+                <legend>D. Informacion Adicional</legend>
+                <label for="busqueda">
+                    15. Búsqueda <input type="search" name="busqueda" id="busqueda">
+                </label>
+                <label for="comentarios">
+                    16. Comentarios <textarea name="comentarios" id="comentarios"></textarea>
+                </label>
+                <!--[]El método de envío del formulario debe ser GET.-->
+                <input id="submit" type="submit" name="Enviar" id="Enviar">
+                
+            </fieldset>
+    </form>
+</body>
+</html>
+
+<!--
+5. Además, tienes que tener en cuenta los siguientes requisitos:
+[x]El título de la página debe ser Formulario HTML5.
+[]El método de envío del formulario debe ser GET.
+[]El destino del envío del formulario debe ser "".
+-->
