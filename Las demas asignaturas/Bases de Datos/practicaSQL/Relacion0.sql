@@ -6,7 +6,7 @@ create table if not exists Cliente (
     Domicilio varchar(100),
     tlf varchar(25),
     ciudad varchar(50)
-);
+)engine=innodb;
 create table if not exists Producto(
     codigo char(4) primary key,
     descripcion varchar(100) not null,
@@ -14,7 +14,7 @@ create table if not exists Producto(
     stock float,
     minimo float,
     check (precio > 0)
-);
+)engine=innodb;
 create table if not exists factura(
     numero int primary key,
     fecha date,
@@ -22,8 +22,8 @@ create table if not exists factura(
 	NIF char(9),
     total_precio float,
     foreign key(NIF) references Cliente(NIF) 
-    on delete restrict on update cascade
-);
+    on delete cascade on update cascade
+)engine=innodb;
 create table if not exists detalle(
     numero int,
     codigo char(4),
@@ -31,7 +31,7 @@ create table if not exists detalle(
     foreign key(numero) references factura(numero) on delete restrict on update cascade,
     foreign key(codigo) references Producto(codigo) on delete restrict on update cascade,
     primary key (numero, codigo)
-);
+)engine=innodb;
 insert into Cliente values 
     ("43434343A", 'DELGADO PEREZ MARISAC', '/ MIRAMAR,84 3ºA','925-200-967', 'TOLEDO'),
     ('51592939K', "LOPEZ VAL SOLEDAD", 'C/PEZ, 54 4ºC ', '915-829-394', 'MADRID'),
@@ -79,3 +79,16 @@ insert into detalle values
 #Eliminar el campo añadido
 	/*alter table Cliente drop fecha_Nac;*/
     
+    #Mostrar todos los datos introducidos en cada una de las tablas
+    select * from Cliente;
+# b. Reemplazar la ciudad del cliente con DNI 51664372R por Granada.
+	update Cliente set Ciudad='GRANADA' where NIF='51592939K';
+# c. Actualizar todos los precios de los productos con un aumento del 10%
+	update Producto set precio=precio*1.10;
+# d. Aumentar el stock en 20 unidades para todos los productos y disminuir el precio de los productos en un 30%
+	update Producto set stock=stock+20, precio=precio*0.70;
+# e. A los productos en los que haya un mínimo de 100 unidades, hacerle un descuento al precio del 50%
+	update Producto set precio=precio*0.5 where stock >=100;
+# f. Eliminar al cliente cuyo dni sea 51664372R
+	delete from Cliente where NIF='51664372R';
+    select * from Cliente
