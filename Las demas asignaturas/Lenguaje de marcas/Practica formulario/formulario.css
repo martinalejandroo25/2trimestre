@@ -27,7 +27,8 @@ form {
 }
 
 legend {
-    border: 2px solid orange; 
+    border: px solid orange; 
+    background-color: rgb(235, 168, 80);
 }
 
 fieldset {
@@ -72,4 +73,7 @@ fieldset {
     width: 30%; 
     font-size: 3vw; 
     font-weight: bolder;
+}
+label {
+    font-weight: bold;
 }
