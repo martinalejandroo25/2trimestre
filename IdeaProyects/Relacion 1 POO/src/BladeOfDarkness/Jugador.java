@@ -11,7 +11,7 @@ public class Jugador {
     private Arma armaDosManos;
 
     public Jugador(String nombre, int nivel, int experiencia, int salud,
-                   Arma armaDerecha, Arma armaIzquierda, Arma armaDosManos) {
+                Arma armaDerecha, Arma armaIzquierda, Arma armaDosManos) {
         this.nombre = nombre;
         this.nivel = 1;
         this.experiencia = 0;
@@ -121,7 +121,7 @@ public class Jugador {
         salud -= puntosD;
         if (salud <= 0) {
             System.out.println("""
-                     Has muerto... No pierdas tu determinación, nos vemos en otra vida...
+                    Has muerto... No pierdas tu determinación, nos vemos en otra vida...
              𝐺𝐴ͣ𝑀ⷨ𝐸ͤ 𝑂ͦ𝑉ͮ𝐸ͤ𝑅ͬ """);
             return true;
         } else if (salud > 0);
