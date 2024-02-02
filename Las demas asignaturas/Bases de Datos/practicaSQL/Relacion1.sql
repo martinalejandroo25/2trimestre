@@ -48,3 +48,32 @@ insert into relacion values
 	('A05', 'P02', 8.45);
 #ver la columna
 select * from alumno;
+#3.- Mostrar todos los nombres de los alumnos con sus teléfonos.
+select nom_al, nom_prof from alumno,profesor,relacion where relacion.id_al=alumno.id_al;
+
+select nom_al as alumno, nom_prof as profesor from alumno as a, profesor a /*me quede a medias aqui*/
+#4.- Mostrar los nombres de los alumnos ordenados en orden creciente y decreciente.
+
+#5.- Mostrar los alumnos ordenados por edad.
+
+#6.- Mostrar nombre de alumnos que contengan alguna ‘A’ en el nombre.
+
+#7.- Mostrar id_al ordenado por nota.
+
+#8.- Mostrar nombre alumno y nombre de sus respectivos profesores.
+
+#9.- Mostrar el nombre de los alumnos que les de clase el profesor P01
+
+#10.- Mostrar el nombre y la nota de los alumnos que les de clase el profesor ‘FERNAND0 GARCIA’.
+
+#11.- Mostrar todos los alumnos (codigo) que hayan aprobado con el profesor P01.
+
+#12.- Mostrar todos los alumnos (nombre) que hayan aprobado con el profesor P01.
+
+#13.- Mostrar todos los alumnos (nombre) que hayan aprobado con el profesor ‘CARMEN TORRES’.
+
+#14.- Mostrar el alumno/s que haya obtenido la nota más alta con ‘P01’,
+
+#15.- Mostrar los alumnos (nombre y codigo) que hayan aprobado todo. 
+
+
