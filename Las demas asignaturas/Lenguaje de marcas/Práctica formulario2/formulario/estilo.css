@@ -1,37 +1,49 @@
 html {
 
 }
+
 body {
+
 }
+
 main {
     width: 60%;
     background-color: #f1f1f1;
+    margin: 0 auto;
 }
+
 header {
     width: 50%;
     text-align: center;
     background-color: rgb(230, 228, 228);
+    margin: 0 auto;
 }
+
 .fieldsetGrid {
     border: 0;
 }
+
 form {
     width: 90%;
     padding: 5px;
+    margin: 0 auto;
 }
+
 legend {
     background-color: white;
 }
+
 label {
     font-size: 90%;
 }
+
 #datos {
     background-color: rgb(229, 227, 227);
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 156%;
+    gap: 25px;
 }
+
 #datos label {
     display: flex;
     flex-direction: column;
@@ -39,52 +51,75 @@ label {
     width: 30%;
     margin-bottom: 10px;
 }
+
 #datos input[type="text"] {
     width: 100%;
 }
+
 #requisitos {
     background-color: lightyellow;
     display: flex;
     flex-direction: column;
 }
-#solicitud {
-    background-color: rgb(20, 124, 159);
-    display: flex;
-    flex-direction: column;
+#requisitos ul, ol {
+    list-style-type: none;
 }
+
+
+#solicitud{
+    background-color: rgb(20, 124, 159);
+    
+}
+#solicitud div{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 1%;
+}
+
+#solicitud section {
+    display: grid;
+    gap: 5rem;
+}
+
 #documentos {
     background-color: rgb(244, 122, 142);
     display: flex;
     flex-direction: column;
 }
+
 #comunicacion {
     background-color: rgb(248, 197, 70);
 }
+
 footer {
     text-align: center;
 }
+
 footer h4 {
     font-size: 100%;
 }
+
 footer p {
     font-size: 80%;
     border: 4px blue dotted;
     font-weight: bolder;
 }
+
 textarea {
     align-self: flex-end;
 }
+
 #submit {
     width: 25%;
     font-size: 105%;
     padding: 0.3%;
-    margin:0 auto;
+    margin: 0 auto;
 }
+
 #cuadrofirma {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 100%;
 }
-
-

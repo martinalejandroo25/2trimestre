@@ -1,4 +1,4 @@
-package BladeOfDarkness1;
+package BladeOfDarkness2;
 
 public class Monstruo {
     private String nombre;

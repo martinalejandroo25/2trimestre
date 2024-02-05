@@ -1,4 +1,4 @@
-package BladeOfDarkness1;
+package BladeOfDarkness2;
 
 import java.util.Scanner;
 

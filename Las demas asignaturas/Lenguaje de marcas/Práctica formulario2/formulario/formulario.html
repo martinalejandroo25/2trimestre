@@ -22,7 +22,7 @@
 		<form action="" method="get">
 			<fieldset class="fieldsetGrid" id="datos">
 				<legend>Datos personales(*)</legend>
-	
+
 				<!--Apellidos:
 			Nombre:
 			DNI:
@@ -32,6 +32,10 @@
 				<label for="nombre">Nombre: <input type="text" name="nombre" id="nombre"></label>
 				<label for="dni">DNI: <input type="text" name="dni"></label>
 				<label for="domicilio">Domicilio(Calle, plaza, número): <input type="text" name="domicilio"></label>
+				
+				<label for="Localidad"> Localidad: <input type="text" name="Localidad"></label>
+				<label for="Email"> Email: <input type="text" name="Email"></label>
+				<label for="nac">Fecha Nac: <input type="date" name="nac"></label>
 				<label for="Provincia">Provincia:<select name="provincia" id="provincia"></label>
 				<option value="Almeria">Almeria</option>
 				<option value="Granada">Granada</option>
@@ -40,17 +44,13 @@
 				<option value="Cordoba">Cordoba</option>
 				<option value="Jaén">Jaén</option>
 				<option value="Huelva">Huelva</option>
-				<option value="Cádiz">Cádiz</option>
-	
-				<label for="Localidad"> Localidad: <input type="text" name="Localidad"></label>
-				<label for="Email"> Email: <input type="text" name="Email"></label>
-				<label for="nac">Fecha Nac: <input type="date" name="nac"></label>
+				<option value="Cádiz">Cádiz</option></select>
 			</fieldset>
-	
+
 			<fieldset class="fieldsetGrid" id="requisitos">
-	
+
 				<legend>Requisitos de acceso</legend>
-	
+
 				<!-- Directo
 				Bachillerato LOGSE. Modalidad:
 				Grado Medio
@@ -58,16 +58,20 @@
 			Mediante prueba -->
 				<label for="directo">
 					<input type="radio" name="directo" value="a"> Directo
-					<div class="sub-opciones">
-						<label><input type="radio" name="bachiller" value="a1">Bachillerato LOGSE. Modalidad: <input
-								type="text" placeholder="Modalidad de bachiller"></label>
-						<label><input type="radio" name="gmedio" value="a2">Grado Medio</label>
-						<label><input type="radio" name="otros" value="a3"> Otros(especifique) <input type="text"></label>
-					</div>
+					<ul><li>
+						<div class="sub-opciones">
+							<label><input type="radio" name="bachiller" value="a1">Bachillerato LOGSE. Modalidad: <input
+									type="text" placeholder="Modalidad de bachiller"></label>
+						</li>
+						<li><label><input type="radio" name="gmedio" value="a2">Grado Medio</label></li>
+							<li><label><input type="radio" name="otros" value="a3"> Otros(especifique) <input
+									type="text"></label></li>
+						</div>
+					</ul>
 				</label>
 				<label for="prueba"><input type="radio" name="prueba" value="b">Mediante Prueba</label>
 			</fieldset>
-	
+
 			<fieldset class="fieldsetGrid" id="solicitud">
 				<!-- Ciclo Formativo
 				selecciona
@@ -83,9 +87,11 @@
 				<option value="selec">- selecciona -</option>
 				<option value="dam">CFGS Desarrollo Aplicaciones Multiplataforma</option>
 				<option value="daw">CFGS Desarrollo Aplicaciones Web</option>
-				<option value="prp">CFGS Prevención Riesgos Profesionales</option>
-				<p>En caso de no ser admitido/a, solicita la admisión por orden de preferencia en los siguientes:</p>
+				<option value="prp">CFGS Prevención Riesgos Profesionales</option> 
+			</select>
+			<p>En caso de no ser admitido/a, solicita la admisión por orden de preferencia en los siguientes:</p>
 				<div>
+				
 					<section>
 						<h4>Ciclos Formativos:</h4>
 						<input type="text" name="ciclo" id="ciclo">
@@ -102,10 +108,10 @@
 						<input type="text" name="localidad2" id="localidad2">
 					</section>
 				</div>
-	
-	
+
+
 			</fieldset>
-	
+
 			<fieldset class="fieldsetGrid" id="documentos">
 				<!-- Documentación presentada
 			Fotocopia DNI
@@ -116,49 +122,51 @@
 					Académico</label>
 				<label for="otrodoc"><input type="checkbox">Otros documentos(especifique) <input type="text"></label>
 			</fieldset>
-	
+
 			<fieldset class="fieldsetGrid" id="comunicacion">
 				<legend>Comunicación</legend>
-	
+
 				De acuerdo con el artículo 42.2 de la Ley 30/1992, de 26 de noviembre , de Régimen Jurídico de las
 				Administraciones
 				Públicas y del procedimientos Administrativo Común, según la nueva redacción de la ley 4/1999, de 13 de
 				enero,se
 				informa que:
-	
+
 				<ul>
 					<li>Elplazo máximo para resolver la presente solicitud es de 3 meses desde la fecha en que se haya
 						tenido entrada en el
 						registro del órgano
-						competente para la tramitación, sin perjuicio de lo previsto en el artículo 42.5 de la misma ley.
+						competente para la tramitación, sin perjuicio de lo previsto en el artículo 42.5 de la misma
+						ley.
 					</li>
-					<li>El efecto que producirá el silencio administrativo si transcurre el plazo sin que se haya dictado y
+					<li>El efecto que producirá el silencio administrativo si transcurre el plazo sin que se haya
+						dictado y
 						notificado la
 						resolución
 						correspondiente, es desestimatorio de la solicitud.</li>
 				</ul>
-	
-	
-				<label for="fecha"> <input type="text">,<input type="text"> de <input type="text">de <select name="fecha"
-						id="year">
+
+
+				<label for="fecha"> <input type="text">,<input type="text"> de <input type="text">de <select
+						name="fecha" id="year">
 						<option value="year19">2019</option>
 						<option value="year20">2020</option>
 						<option value="year21">2021</option>
 						<option value="year22">2022</option></label>
-	
+
 				<label for="firma">
 					<p>La persona solicitante,</p>
-				
+
 					<h4>Firma</h4>
-				<section id="cuadrofirma">
-					<textarea name="firma" id="firma" cols="20" rows="12"
-						placeholder="Coloca aquí tu firma electrónica visible"></textarea>
+					<section id="cuadrofirma">
+						<textarea name="firma" id="firma" cols="20" rows="12"
+							placeholder="Coloca aquí tu firma electrónica visible"></textarea>
 				</label>
 				<input type="submit" value="Enviar" id="submit">
-	
+
 				</section>
 			</fieldset>
-	
+
 			<footer>
 				<p> (*)Los datos personales contenidos en este impreso podrán ser incluidos en un fichero para su
 					tratamiento por la
@@ -166,14 +174,15 @@
 					de las funciones propias que tiene atribuídas en el ámbito de sus competencias, pudiendo dirigirse a
 					cualquier
 					órgano de la misma para ejercitar los derechos de acceso, rectificación,
-					cancelación y oposición, según lo dispuesto en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección
+					cancelación y oposición, según lo dispuesto en la Ley Orgánica 3/2018, de 5 de diciembre, de
+					Protección
 					de Datos ."</p>
-	
+
 				<h4>DIRECTOR/A O TITULAR DEL CENTRO</h4>
 			</footer>
-	
-	
-	
+
+
+
 		</form>
 	</main>
 </body>
