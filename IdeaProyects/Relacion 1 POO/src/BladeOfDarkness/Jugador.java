@@ -1,8 +1,10 @@
 package BladeOfDarkness;
 
+import java.util.Scanner;
+
 public class Jugador {
     private String nombre;
-    private enum clase {MAGO, BRUJO, BARBARO, CABALLERO};
+    public enum clase {MAGO, BRUJO, BARBARO, CABALLERO};
     private int nivel;
     private int salud = 200;
     private int experiencia;
@@ -10,7 +12,7 @@ public class Jugador {
     private Arma armaIzquierda;
     private Arma armaDosManos;
 
-    public Jugador(String nombre, int nivel, int experiencia, int salud,
+    public Jugador(String nombre, clase clase, int nivel, int experiencia, int salud,
                 Arma armaDerecha, Arma armaIzquierda, Arma armaDosManos) {
         this.nombre = nombre;
         this.nivel = 1;
@@ -137,8 +139,44 @@ public class Jugador {
                 }
             }
         }
-        //comprobar si has matado al monstruo
-
-        //Subir la experiencia y el nivel si corresponde
     }
+    public void mostrarMenu(Jugador jugador) { //no he podido implementar este sistema, me da un error de bucle
+        Scanner sc = new Scanner(System.in);
+        Arma arma = null;
+        System.out.println("""
+                    Elige un arma para equipar:
+                    1.Espada
+                    2.Hacha
+                    3.Bastón
+                    4,Arco
+                    Selecciona una opción
+                    """);
+        int opcion = sc.nextInt();
+
+        switch(opcion) {
+            case 1:
+                arma = new Arma("Espada", Arma.tipo.ESPADA, 48, false);
+                jugador.equiparArma(arma);
+                break;
+            case 2:
+                arma = new Arma("Hacha", Arma.tipo.HACHA, 80, true);
+                jugador.equiparArma(arma);
+                break;
+            case 3:
+                arma = new Arma("Bastón", Arma.tipo.BASTON, 32, false);
+                jugador.equiparArma(arma);
+                break;
+            case 4:
+                arma = new Arma("Arco", Arma.tipo.ARCO, 25, true);
+                jugador.equiparArma(arma);
+                break;
+        } if (arma != null) {
+            if (equiparArma(arma)) {
+                System.out.println("Tu " + arma.getNombre()+" ha sido equipado con exito");
+            }else {
+                System.out.println("No se pudo equipar el arma, No hay espacio");
+            }
+        }
+    }
+
 }

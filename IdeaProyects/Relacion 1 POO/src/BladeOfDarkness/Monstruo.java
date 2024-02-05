@@ -2,12 +2,12 @@ package BladeOfDarkness;
 
 public class Monstruo {
     private String nombre;
-    private enum clase {GOBLIN, TROLL, SKRALL, DEMONIO, FANTASMA};
+    public enum clase {GOBLIN, TROLL, SKRALL, DEMONIO, FANTASMA};
     private int nivel;
     private int salud = 100;
     private int puntosD;
 
-    public Monstruo(String nombre, int nivel, int salud, int puntosD) {
+    public Monstruo(String nombre,clase clase, int nivel, int salud, int puntosD) {
         this.nombre = nombre;
         this.nivel = 1;
         this.salud = 100;
