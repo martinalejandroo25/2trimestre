@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +24,11 @@ tu página web personal".
 
 [x]Tu localidad. Input tipo select, con las opciones Cuevas, Vera, Garrucha.
 -->
+
 <body>
-    <header><h1>Recogida de datos</h1></header>
+    <header>
+        <h1>Recogida de datos</h1>
+    </header>
 
     <form method="get">
         <fieldset class="fieldsetGrid">
@@ -45,7 +49,7 @@ tu página web personal".
                 5. Email <input type="text" name="correo" id="correo">
             </label>
             <label for="url">
-                6. URL <input type="text" name="url" id="url">
+                6. URL <input type="text" name="url" id="url" placeholder="Introduce la URL de tu página web">
             </label>
             <label for="localidad">
                 7. localidad <select name="localidad" id="localidad">
@@ -107,25 +111,27 @@ tu página web personal".
             [x]Término de búsqueda, con un control de tipo search.
             [x]Un área de texto para dejar comentarios adicionales
             [x]Un botón de envío.-->
-            <fieldset id="informacion">
-                <legend>D. M&aacute;s informaci&oacute;n</legend>
-                <label for="busqueda">
-                    15. Búsqueda <input type="search" name="busqueda" id="busqueda">
-                </label>
-                <label for="comentarios">
-                    16. Comentarios <textarea name="comentarios" id="comentarios"></textarea>
-                </label>
-                <!--[]El método de envío del formulario debe ser GET.-->
-                <input id="submit" type="submit" name="Enviar" id="Enviar">
-                
-            </fieldset>
+        <fieldset id="informacion">
+            <legend>D. M&aacute;s informaci&oacute;n</legend>
+            <label for="busqueda">
+                15. Búsqueda <input type="search" name="busqueda" id="busqueda"
+                    placeholder="Introduce el término de busqueda">
+            </label>
+            <label for="comentarios">
+                16. Comentarios <textarea name="comentarios" id="comentarios"
+                    placeholder="Introduce tus comentarios"></textarea>
+            </label>
+            <input id="submit" type="submit" name="Enviar" id="Enviar">
+
+        </fieldset>
     </form>
 </body>
+
 </html>
 
 <!--
 5. Además, tienes que tener en cuenta los siguientes requisitos:
 [x]El título de la página debe ser Formulario HTML5.
-[]El método de envío del formulario debe ser GET.
+[x]El método de envío del formulario debe ser GET.
 []El destino del envío del formulario debe ser "".
 -->
