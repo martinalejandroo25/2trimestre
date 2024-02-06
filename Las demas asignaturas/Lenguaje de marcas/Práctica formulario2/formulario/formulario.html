@@ -15,13 +15,13 @@
 <body>
 
 	<header>
-		<h2>HOJA DE INSCRIPCIÓN DE LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h2>
+		<h1>HOJA DE INSCRIPCIÓN DE LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h1>
 	</header>
 
 	<main>
 		<form action="" method="get">
 			<fieldset class="fieldsetGrid" id="datos">
-				<legend>Datos personales(*)</legend>
+				<legend id="datosBorde">Datos personales(*)</legend>
 
 				<!--Apellidos:
 			Nombre:
@@ -49,7 +49,7 @@
 
 			<fieldset class="fieldsetGrid" id="requisitos">
 
-				<legend>Requisitos de acceso</legend>
+				<legend id="requisitosBorde">Requisitos de acceso</legend>
 
 				<!-- Directo
 				Bachillerato LOGSE. Modalidad:
@@ -82,7 +82,7 @@
 				Ciclos formativos:
 				Centros:
 				Localidad: -->
-				<legend>Solicitud</legend>
+				<legend id="solicitudBorde">Solicitud</legend>
 				<label for="ciclo"><select name="ciclo" id="ciclo"></label>
 				<option value="selec">- selecciona -</option>
 				<option value="dam">CFGS Desarrollo Aplicaciones Multiplataforma</option>
@@ -91,7 +91,6 @@
 			</select>
 			<p>En caso de no ser admitido/a, solicita la admisión por orden de preferencia en los siguientes:</p>
 				<div>
-				
 					<section>
 						<h4>Ciclos Formativos:</h4>
 						<input type="text" name="ciclo" id="ciclo">
@@ -117,14 +116,14 @@
 			Fotocopia DNI
 			Certificado Académico
 			Otros documentos (especifique): -->
-				<legend>documentación presentada</legend>
+				<legend id="documentacionBorde">documentación presentada</legend>
 				<label for="fotodni"><input type="checkbox">Fotocopia DNI <input type="checkbox">Certificado
 					Académico</label>
 				<label for="otrodoc"><input type="checkbox">Otros documentos(especifique) <input type="text"></label>
 			</fieldset>
 
 			<fieldset class="fieldsetGrid" id="comunicacion">
-				<legend>Comunicación</legend>
+				<legend id="comunicacionBorde">Comunicación</legend>
 
 				De acuerdo con el artículo 42.2 de la Ley 30/1992, de 26 de noviembre , de Régimen Jurídico de las
 				Administraciones
@@ -144,27 +143,23 @@
 						notificado la
 						resolución
 						correspondiente, es desestimatorio de la solicitud.</li>
-				</ul>
-
-
-				<label for="fecha"> <input type="text">,<input type="text"> de <input type="text">de <select
-						name="fecha" id="year">
-						<option value="year19">2019</option>
-						<option value="year20">2020</option>
-						<option value="year21">2021</option>
-						<option value="year22">2022</option></label>
-
-				<label for="firma">
-					<p>La persona solicitante,</p>
-
-					<h4>Firma</h4>
-					<section id="cuadrofirma">
-						<textarea name="firma" id="firma" cols="20" rows="12"
-							placeholder="Coloca aquí tu firma electrónica visible"></textarea>
-				</label>
-				<input type="submit" value="Enviar" id="submit">
-
-				</section>
+					</ul>
+						<label for="fecha"> <input type="text">,<input type="text"> de <input type="text">de <select>
+							name="fecha" id="year">
+							<option value="year19">2019</option>
+							<option value="year20">2020</option>
+							<option value="year21">2021</option>
+							<option value="year22">2022</option></label></select>
+							<p>La persona solicitante,</p>
+		
+						<h4>Firma</h4>
+							<section id="cuadrofirma">
+								<textarea name="firma" id="firma" cols="20" rows="12"
+								placeholder="Coloca aquí tu firma electrónica visible"></textarea>
+								<input type="submit" value="Enviar" id="submit">
+								
+							</section>
+						
 			</fieldset>
 
 			<footer>
