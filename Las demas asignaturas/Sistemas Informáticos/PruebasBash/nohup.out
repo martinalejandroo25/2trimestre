@@ -1,2 +1,4 @@
 Warning: failed to launch javaldx - java may not function correctly
 ** Message: 16:54:29.152: Connecting to org.freedesktop.Tracker3.Miner.Files
+
+(org.gnome.Nautilus:7680): GLib-CRITICAL **: 17:31:00.161: Source ID 32106 was not found when attempting to remove it
