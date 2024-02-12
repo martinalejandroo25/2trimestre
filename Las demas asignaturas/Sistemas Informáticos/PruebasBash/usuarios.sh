@@ -75,15 +75,59 @@ addUsuarios() {
 }	
 
 addUserToGroup() {
-
+	echo Escribe el nombre de usuario a seleccionar
+	read user
+    echo Escribe el nombre de grupo a seleccionar
+	read group
+    
+    #verificar si se proporciono un nombre de usuario
+	local user=$user
+	#verificar si se proporciono un nombre de grupo
+	local user=$group
+	if groups "$user" | grep &> /dev/null "\b$group\b"; then
+		echo "El usuario $user ya pertenece al grupo $group"
+		exit 1
+	else
+		sudo usermod -aG "$group" "$user"
+		echo "El usuario $user ha sido agregado al grupo $group"
+	fi
 }
 removeUserFromGroup() {
-
+	echo "Escribe el usuario a Seleccionar"
+    read user
+    echo "Escribe el grupo del cual se eliminará el usuario $user"
+	read group
+    
+    #verificar si se proporciono un nombre de usuario
+	local user=$user
+    #verificar si se proporciono un nombre de grupo
+    local user=$group
+    if groups "$user" | grep &> /dev/null "\b$group\b"; then
+		sudo gpasswd -d "$group" "$user"
+	else 
+		echo "El usuario $user no pertenece al grupo $group"
+	fi
 }
 addgroup() {
-
+	Echo "Da un nombre para el grupo a añadir"
+	read $group
+	if
+		local group=$group
+		echo "El grupo $group ya existe"
+	else
+		sudo groupadd "$group"
+        echo "El grupo $group se ha creado correctamente"
+	fi
 }
 deleteGroup(){
-
+	Echo "Da un nombre de un grupo válido para eliminar"
+	read $group
+    if
+        local group=$group
+		sudo groupdel "$group"
+		echo "El grupo $group se ha eliminado correctamente"
+	else
+		echo "El grupo $group no existe"
+	fi	
 }
 
