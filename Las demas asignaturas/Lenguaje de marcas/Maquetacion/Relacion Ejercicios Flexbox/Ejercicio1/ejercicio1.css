@@ -1,0 +1,27 @@
+/*1. Menú horizontal con flex
+Este ejercicio te pide que coloques un menú horizontal en la parte superior de la página
+usando una lista no ordenada y el modelo flexbox. La barra tendrá cinco enlaces y
+ocupa todo el ancho. La letra usada es sans-serif, el color de fondo es
+rgba(123,198,199,0.8). Lo importante es lograr la disposición del menú*/
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+li {
+    background-color: rgba(123, 198, 199, 0.8);
+    text-align: left;
+    width: 25vh;
+    height: 3vh;
+    padding: 1rem;
+    margin: 0.5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 1%;
+    padding-top: 0.5% ;
+}
+ul a, ul a:link {
+    text-decoration: none;
+    color: black;
+}
