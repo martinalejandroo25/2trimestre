@@ -76,6 +76,7 @@ select articulos.*, fabricante.* from articulos
 join articulos on articulos.clave_fabricante = fabricante.Clave_fabricante
 join fabricante on fabricante.Clave_fabricante = articulos.clave_fabricante;
 # r) Obtener la clave de producto, nombre del producto y nombre del fabricante de todos los productos en venta
+
 # s) Obtener el nombre y precio de los artículos donde el fabricante sea Logitech ordenarlos alfabéticamente por nombre
 #    del producto
 # t) Obtener el nombre, precio y nombre de fabricante de los productos que son marca Lexar o Kingston ordenados
