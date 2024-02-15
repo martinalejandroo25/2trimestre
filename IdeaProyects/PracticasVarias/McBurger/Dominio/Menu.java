@@ -1,4 +1,4 @@
-package McBurger;
+package McBurger.Dominio;
 
 public class Menu {
 }

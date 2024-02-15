@@ -1,4 +1,4 @@
-package McBurger.Principal;
+package McBurger.Dominio;
 
 public class Cola {
 }
