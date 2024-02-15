@@ -1,4 +1,7 @@
 package McBurger.Dominio;
 
-public class Patata {
+import McBurger.Interfaces.Cocinable;
+
+public class Patata extends Comida implements Cocinable {
+
 }

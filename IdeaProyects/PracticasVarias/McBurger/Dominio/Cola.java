@@ -1,4 +1,5 @@
 package McBurger.Dominio;
 
-public class Cola {
+public class Cola extends Comida {
+
 }
