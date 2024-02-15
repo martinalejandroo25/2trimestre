@@ -3,12 +3,13 @@
 
 
 if [ $# -eq 1 ]; then
-    echo "Directorio seleccionado"
-    tar -zcf $1/$2.tar.gz $1
-    echo "Archivo comprimido"
-    
-    exit 1
-else
-    echo "No se introduzco ningún parámetro"
-fi
+    if [ -d $@ ]; then
+fecha=(date +F%)
+    tar -cf $fecha$@.tar $@
+    gzip $fecha$@.tar
+    echo "fichero compreso con exito"
 
+    else
+        echo "No se ingresó un parámetro"
+    fi
+fi
