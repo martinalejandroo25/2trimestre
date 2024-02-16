@@ -82,6 +82,7 @@ join fabricante on fabricante.Clave_fabricante = articulos.clave_fabricante;
 # t) Obtener el nombre, precio y nombre de fabricante de los productos que son marca Lexar o Kingston ordenados
 #    descendentemente por precio
 # u) Añade un nuevo producto: Clave del producto 11, Altavoces de $ 120 del fabricante 2
+insert into articulos set nombre = 'Altavoces', Clave_articulo = 11,
 # v) Cambia el nombre del producto 6 a ‘Impresora Laser’
 # w) Aplicar un descuento del 10% a todos los productos.
 # x) Aplicar un descuento de $ 10 a todos los productos cuyo precio sea mayor o igual a $ 300

@@ -17,32 +17,32 @@ create table if not exists Mecanico(
     NOM_MEC char(40),
     SUELDO double,
     FEC_NAC date
-);
+) engine=innodb;
 #Crear la tabla Coche
 create table if not exists Coche(
     MAT_CO varchar(8) primary key not null,
     MOD_CO char(20),
     COLOR char(13),
     TIPO char(13)
-);
+)engine=innodb;
 #Crear la tabla Periodo
 create table if not exists Periodo(
     ID_PER varchar(3) primary key not null,
     FEC_INI date,
     FEC_FIN date
-);
+)engine=innodb;
 #Crear la tabla Tipo
 create table if not exists Tipo(
     ID_TIPO varchar(10) primary key,
     NOM_TIPO char(40)
-);
+)engine=innodb;
 #Crear la tabla Pieza
 create table if not exists Pieza(
     ID_PIEZ varchar(3) primary key not null,
     NOM_PIEZ char(40),
     ID_TIPO varchar(10),
     foreign key(ID_TIPO) references Tipo(ID_TIPO)
-);
+)engine=innodb;
 #Crear la tabla Relacion
 create table if not exists Relacion(
     ID_MEC varchar(3),
@@ -54,7 +54,7 @@ create table if not exists Relacion(
     foreign key(MAT_CO) references Coche(MAT_CO),
     foreign key(ID_PER) references Periodo(ID_PER),
     foreign key(ID_PIEZ) references Pieza(ID_PIEZ)
-);
+)engine=innodb;
 insert into Mecanico
 values ("ME1", "JUAN ROMUALDO", 1289, '1970-09-05'),
     ("ME2", "RAMON FERNANDEZ", 1678, '1976-07-05'),
@@ -133,15 +133,15 @@ select * from Relacion;
 
 #CONSULTAS:
 #1.- DATOS DEL EMPLEADO DE MAYOR SUELDO.
-select *, from Mecanico where Sueldo 
+select * from Mecanico order by Sueldo desc limit 1;
 #2.- DATOS DEL EMPLEADO MAYOR.
-
+select * from Mecanico order by FEC_NAC asc limit 1;
 #3.- DATOS DEL EMPLEADO MENOR.
-
+select * from Mecanico order by FEC_NAC desc limit 1;
 #4.- DATOS DE TODOS LOS COCHES DIESEL.
-
+select * from Coche where TIPO like "DIESEL";
 #5.- DATOS DEL COCHE QUE MAS HA IDO AL TALLER.
-
+select * from Periodo where FEC_INI;
 #6.- PRECIO TOTAL DE TODAS LAS REPARACIONES.
 
 #7.- NOMBRE DE PIEZA Y TIPO DE LA PIEZA MAS USADA.
