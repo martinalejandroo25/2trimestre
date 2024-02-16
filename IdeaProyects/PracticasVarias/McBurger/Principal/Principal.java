@@ -1,7 +1,6 @@
 package McBurger.Principal;
 
 import McBurger.Dominio.*;
-import dominio.*;
 
 public class Principal {
 

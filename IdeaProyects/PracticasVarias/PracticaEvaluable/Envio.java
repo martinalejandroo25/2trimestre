@@ -21,15 +21,11 @@ almacén y la de llegada a destino.*/
 public class Envio implements Transportable {
     public Envio() {
     }
+
     private ArrayList<Transportable> productos = new ArrayList<Transportable>();
 
     private LocalDate fechaSalida;
     private LocalDate fechaLlegada;
-
-    public boolean esEnvioInternacional(){
-        super
-        return false;
-    }
 
 
     public LocalDate getFechaSalida() {
@@ -43,27 +39,32 @@ public class Envio implements Transportable {
     public LocalDate getFechaLlegada() {
         return fechaLlegada;
     }
+
     public void setFechaLlegada(LocalDate fechaLlegada) {
         this.fechaLlegada = fechaLlegada;
     }
-    public void agregarTransportable(Transportable item){
+
+    public void agregarTransportable(Transportable item) {
         productos.add(item);
     }
+
     public double calcularCostoTotalEnvio() {
         double costoTotal = 0;
-        for (int i = 0; i < productos.size() ; i++) {
+        for (int i = 0; i < productos.size(); i++) {
             costoTotal += productos.get(i).calcularCostoEnvio(esEnvioInternacional());
         }
         return costoTotal;
     }
-    public void listarProductos(){
+
+    public void listarProductos() {
         for (int i = 0; i < productos.size(); i++) {
             System.out.println(productos.get(i));
         }
     }
-    public int diasTranscurridos(){
+
+    public int diasTranscurridos() {
         Period periodo = Period.between(this.fechaLlegada, this.fechaSalida);
         return periodo.getDays();
-    }
 
+    }
 }
