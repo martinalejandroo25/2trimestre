@@ -1,6 +1,6 @@
-package McBurger;
+package McBurger.Principal;
 
-import McBurger.Dominio.Menu;
+import McBurger.Dominio.*;
 import dominio.*;
 
 public class Principal {
