@@ -10,6 +10,21 @@ public class Hamburguesa extends Comida {
         this.fechaCaducidad = LocalDate.parse(fechaCaducidad);
     }
 
+    @Override
+    public void cocinar() {
+
+    }
+
+    @Override
+    public void freir() {
+
+    }
+
+    @Override
+    public void asar() {
+
+    }
+
     /*El precio de una hamburguesa es de 3,50 €.*/
     @Override
     public double obtenerPrecio() {

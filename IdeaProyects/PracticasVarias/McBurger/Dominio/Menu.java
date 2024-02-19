@@ -5,62 +5,60 @@ import java.util.ArrayList;
 public class Menu {
     public static int numeroMenus;
     private int numeroInstancia;
-    private ArrayList<Ingrediente> listaIngrediente;
-
-    /*Crear un Constructor sin parámetros con la funcionalidad correspondiente.*/
+    private ArrayList<Comida> listaComida;
+    private ArrayList<Bebida> listaBebida;
 
     public Menu() {
-        this.numeroMenus = 0;
-        this.numeroInstancia = 0;
-        this.listaIngrediente = new ArrayList<Ingrediente>();
+        this.numeroMenus++;
+        this.numeroInstancia++;
+        this.listaComida = new ArrayList<>();
+        this.listaBebida = new ArrayList<>();
     }
 
     public void imprimirMenu() {
-        for (int i= 0; i < this.listaIngrediente.size(); i++) {
-            System.out.println(this.listaIngrediente.get(i) );
+        for (Comida comida : listaComida) {
+            System.out.println(comida.getNombre());
         }
+        for (Bebida bebida : listaBebida) {
+            System.out.println(bebida.getNombre());
+        }
+    }
+
+    public void addBebida(Bebida bebida) {
+        listaBebida.add(bebida);
+    }
+
+    public void addComida(Comida comida) {
+        listaComida.add(comida);
     }
 
     public int getNumeroMenus() {
         return numeroMenus;
     }
 
-    public void setNumeroMenus(int numeroMenus) {
-        this.numeroMenus = numeroMenus;
-    }
-
     public int getNumeroInstancia() {
         return numeroInstancia;
     }
 
-    public void setNumeroInstancia(int numeroInstancia) {
-        this.numeroInstancia = numeroInstancia;
+    public ArrayList<Comida> getListaComida() {
+        return listaComida;
     }
 
-    public ArrayList<Ingrediente> getListaIngrediente() {
-        return listaIngrediente;
+    public ArrayList<Bebida> getListaBebida() {
+        return listaBebida;
     }
-
-    public void setListaIngrediente(ArrayList<Ingrediente> listaIngrediente) {
-        this.listaIngrediente = listaIngrediente;
-    }
-   /*Añadir los métodos necesarios para que el programa compile y para que funcione la clase Principal.java*/
-   public void addBebida(Ingrediente ing){
-       listaIngrediente.add(ing);
-   }
-   public void addComida(Ingrediente ing){
-       listaIngrediente.add(ing);
-   }
-
 
     public int getNumeroIngredientes() {
-        return listaIngrediente.size();
+        return listaComida.size() + listaBebida.size();
     }
 
     public double obtenerPrecioMenu() {
         double precioTotal = 0;
-        for (int i = 0; i < listaIngrediente.size() ; i++) {
-            precioTotal += listaIngrediente.get(i).obtenerPrecio();
+        for (Comida comida : listaComida) {
+            precioTotal += comida.obtenerPrecio();
+        }
+        for (Bebida bebida : listaBebida) {
+            precioTotal += bebida.obtenerPrecio();
         }
         return precioTotal;
     }

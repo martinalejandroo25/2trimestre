@@ -10,8 +10,5 @@ public class ProductoRefrigerado extends Producto{
         this.Nivelrefrigeracion = Nivelrefrigeracion;
     }
 
-    @Override
-    public double calcularCostoEnvio(int nivel) {
-        return super.calcularCostoEnvio(esEnvioInternacional());
-    }
+
 }
