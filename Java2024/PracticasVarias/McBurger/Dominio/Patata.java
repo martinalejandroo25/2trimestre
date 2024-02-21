@@ -8,6 +8,7 @@ public class Patata extends Comida implements Cocinable {
     private boolean  cocida;
     private boolean  asada;
     public Patata() {
+        super("patata");
         cocinada = false;
         frita = false;
         cocida = false;
