@@ -8,6 +8,7 @@ public class Hamburguesa extends Comida {
 
     /*Pasar como String la fecha de caducidad de Hamburguesa*/
     public Hamburguesa(String fechaCaducidad){
+        super("Hamburguesa");
         // Usar Datetimeformatter para usar otro patrón de fecha, ya que por defecto usará el formato ingles(yyyy/MM/dd)
         DateTimeFormatter formateadorFecha = DateTimeFormatter.ofPattern("dd/MM/yyy"); //mes en MM ya que si no pilla mm como minutos
         this.fechaCaducidad = LocalDate.parse(fechaCaducidad, formateadorFecha);

@@ -17,10 +17,10 @@ public class Menu {
 
     public void imprimirMenu() {
         for (Comida comida : listaComida) {
-            System.out.println(comida.getNombre());
+            System.out.println(comida);
         }
         for (Bebida bebida : listaBebida) {
-            System.out.println(bebida.getNombre());
+            System.out.println(bebida);
         }
     }
 

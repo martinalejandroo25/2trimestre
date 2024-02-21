@@ -2,7 +2,7 @@ package McBurger.Dominio;
 
 public class Cola extends Bebida {
     public Cola() {
-        super(false);
+        super("Cola", false);
     }
 
     public void cocinar() {
