@@ -50,6 +50,7 @@ create table if not exists Relacion(
     ID_PER varchar(3),
     ID_PIEZ varchar(3),
     PRECIO double,
+    primary key(ID_MEC, MAT_CO, ID_PER, ID_PIEZ),
     foreign key(ID_MEC) references Mecanico(ID_MEC),
     foreign key(MAT_CO) references Coche(MAT_CO),
     foreign key(ID_PER) references Periodo(ID_PER),
@@ -84,10 +85,10 @@ select * from Periodo;
 
 insert into Tipo
 values
-("TI1" "CHAPA"),
-("TI2" "MECANICA"),
-("TI3" "ELECTRICIDAD"),
-("TI4" "ACCESORIOS");
+("TI1", "CHAPA"),
+("TI2", "MECANICA"),
+("TI3", "ELECTRICIDAD"),
+("TI4", "ACCESORIOS");
 select * from Tipo;
 
 insert into Pieza
@@ -143,9 +144,15 @@ select * from Coche where TIPO like "DIESEL";
 #5.- DATOS DEL COCHE QUE MAS HA IDO AL TALLER.
 select * from Periodo where FEC_INI;
 #6.- PRECIO TOTAL DE TODAS LAS REPARACIONES.
-
+select PRECIO from Relacion;
 #7.- NOMBRE DE PIEZA Y TIPO DE LA PIEZA MAS USADA.
-
+select Pieza.NOM_PIEZ, Tipo.NOM_TIPO, count(*) as numApararicion 
+from Relacion
+join Pieza on Relacion.ID_PIEZ = Pieza.ID_PIEZ
+join Tipo on Pieza.ID_TIPO = Tipo.ID_TIPO
+group by Pieza.ID_TIPO 
+order by count(*) DESC
+LIMIT 1 ;
 #8.- NOMBRE Y TIPO DE LA PIEZA MENOS USADA.
 
 #9.- MATRICULA, MARCA, MODELO COLOR PIEZA Y TIPO DE TODOS LOS COCHES REPARADOS.
