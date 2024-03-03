@@ -1,2 +1,4 @@
-package Relacion4.Multimedia.Series;public class Episodio {
+package Relacion4.Multimedia.Series;
+
+public class Episodio {
 }

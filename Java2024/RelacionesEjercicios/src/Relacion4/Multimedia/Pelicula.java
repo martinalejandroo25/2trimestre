@@ -1,2 +1,4 @@
-package Relacion4;public class Pelicula {
+package Relacion4.Multimedia;
+
+public class Pelicula {
 }

@@ -1,2 +1,4 @@
-package Relacion4;public class Genero {
+package Relacion4;
+
+public class Genero {
 }
