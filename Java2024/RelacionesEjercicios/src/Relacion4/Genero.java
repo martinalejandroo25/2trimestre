@@ -1,4 +1,3 @@
-package Relacion4;
+package src.Relacion4;
 
-public class Genero {
-}
+public enum Genero { THRILLER, ACCION, AVENTURAS, TERROR, ROMANTICO, SCIFI, DRAMA, HISTORICO, INFANTIL, COMEDIA}

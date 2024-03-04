@@ -1,6 +1,6 @@
-package Relacion4.Multimedia;
+package src.Relacion4.Multimedia;
 
-import Relacion4.Genero;
+import src.Relacion4.Genero;
 
 public class Multimedia {
     private long autoincremento = 1;
