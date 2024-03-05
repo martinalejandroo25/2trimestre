@@ -1,15 +1,16 @@
 package src.Relacion4.Multimedia.Series;
 
 import src.Relacion4.Genero;
+import src.Relacion4.Multimedia.*;
 
 import java.util.ArrayList;
 
-public class Serie {
+public class Serie extends Multimedia{
     private ArrayList<Temporada> temporadas = new ArrayList<>();
 
     public Serie() {
     }
-    public int NumeroTemporadas() {
+    public int getNumeroTemporadas() {
         return temporadas.size();
     }
 

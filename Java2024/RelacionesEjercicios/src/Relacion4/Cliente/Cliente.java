@@ -1,8 +1,8 @@
-package Relacion4.Cliente;
+package src.Relacion4.Cliente;
 
 import java.util.Objects;
 
-public class Cliente {
+public abstract class Cliente {
     private String dni;
     private String nombre;
     private String email;

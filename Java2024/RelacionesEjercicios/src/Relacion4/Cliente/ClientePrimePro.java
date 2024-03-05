@@ -1,4 +1,4 @@
-package Relacion4.Cliente;
+package src.Relacion4.Cliente;
 
 public class ClientePrimePro extends Cliente {
     private double precio = 5;
