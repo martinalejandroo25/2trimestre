@@ -1,4 +1,3 @@
 package Asiento;
 
-public class TipoTarifa {
-}
+public enum TipoTarifa {OPTIMA, CONFORT, FLEXIBLE}
