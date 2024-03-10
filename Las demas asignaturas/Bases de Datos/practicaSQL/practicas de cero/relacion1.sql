@@ -54,13 +54,21 @@ select nom_al from alumno where nom_al like "%A%"; -- %a% CONTIENE a, a% comienz
 select id_al from relacion order by nota asc;
 
 # 8.- Mostrar nombre alumno y nombre de sus respectivos profesores.
-select 
+select nom_al, nom_prof from alumno
+inner join relacion on relacion.id_al = alumno.id_al
+inner join profesor on relacion.id_prof = profesor.id_prof; -- será necesario aclarar la tabla procedente, seguido del . y la columna que vas a referira
 # 9.- Mostrar el nombre de los alumnos que les de clase el profesor P01
-
+select nom_al, nom_prof from alumno
+inner join relacion on relacion.id_al = alumno.id_al
+inner join profesor on relacion.id_prof = profesor.id_prof where profesor.id_prof like "p01";
 # 10.- Mostrar el nombre y la nota de los alumnos que les de clase el profesor ‘FERNAND0 GARCIA’.
-
+select nom_al, nota from alumno
+inner join relacion on relacion.id_al = alumno.id_al
+inner join profesor on profesor.id_prof = relacion.id_prof where profesor.nom_prof like "FERNANDO GARCIA";
 # 11.- Mostrar todos los alumnos (codigo) que hayan aprobado con el profesor P01.
-
+select id_al from alumno a
+inner join relacion r on r.id_al = a.id_al
+inner join profesor p on p.id_prof = r.id_prof where r.nota >= 5 and p.id_prof = "P01";
 # 12.- Mostrar todos los alumnos (nombre) que hayan aprobado con el profesor P01.
 
 # 13.- Mostrar todos los alumnos (nombre) que hayan aprobado con el profesor ‘CARMEN TORRES’.
