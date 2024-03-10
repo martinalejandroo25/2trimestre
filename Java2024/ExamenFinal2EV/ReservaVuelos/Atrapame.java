@@ -45,12 +45,13 @@ public class Atrapame {
     public void addVuelo(Vuelo vuelo){
         vuelos.add(vuelo);
     }
-    public boolean crearReserva(Vuelo vuelo, ArrayList<Pasajero> pasajeros, TipoTarifa tipoT, TipoAsiento tipoA) {
-        int asientosDisponibles = vuelo.verificarDisponibilidad(tipoA);
-        if (asientosDisponibles >= pasajeros.size()) {
-           // ReservaVuelo reserva = new ReservaVuelo(); //long id, Vuelo vuelo, ArrayList<Pasajero> pasajeros, TipoTarifa tipoT, TipoAsiento tipoA
-
-        }
-        return false;
-    }
+//  CHATGPT
+//    public boolean crearReserva(Vuelo vuelo, ArrayList<Pasajero> pasajeros, TipoTarifa tipoT, TipoAsiento tipoA) {
+//        int asientosDisponibles = vuelo.verificarDisponibilidad(tipoA);
+//        if (asientosDisponibles >= pasajeros.size()) {
+//           // ReservaVuelo reserva = new ReservaVuelo(); //long id, Vuelo vuelo, ArrayList<Pasajero> pasajeros, TipoTarifa tipoT, TipoAsiento tipoA
+//
+//        }
+//        return false;
+//    }
 }

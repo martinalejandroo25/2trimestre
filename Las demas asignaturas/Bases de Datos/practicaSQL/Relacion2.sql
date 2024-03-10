@@ -23,7 +23,6 @@ insert into fabricantes values
 (3, "Logitech"),
 (4, "Lexar"),
 (5, "Lexar");
-
 insert into articulos values
 (1, "Teclado", 100, 3),
 (2, "Disco duro 300 Gb", 500, 5),
@@ -76,13 +75,13 @@ select articulos.*, fabricante.* from articulos
 join articulos on articulos.clave_fabricante = fabricante.Clave_fabricante
 join fabricante on fabricante.Clave_fabricante = articulos.clave_fabricante;
 # r) Obtener la clave de producto, nombre del producto y nombre del fabricante de todos los productos en venta
-
+select 
 # s) Obtener el nombre y precio de los artículos donde el fabricante sea Logitech ordenarlos alfabéticamente por nombre
 #    del producto
 # t) Obtener el nombre, precio y nombre de fabricante de los productos que son marca Lexar o Kingston ordenados
 #    descendentemente por precio
 # u) Añade un nuevo producto: Clave del producto 11, Altavoces de $ 120 del fabricante 2
-insert into articulos set nombre = 'Altavoces', Clave_articulo = 11, precio = 120 
+
 # v) Cambia el nombre del producto 6 a ‘Impresora Laser’
 # w) Aplicar un descuento del 10% a todos los productos.
 # x) Aplicar un descuento de $ 10 a todos los productos cuyo precio sea mayor o igual a $ 300

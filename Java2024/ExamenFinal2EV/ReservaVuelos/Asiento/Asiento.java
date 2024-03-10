@@ -123,11 +123,12 @@ public abstract class Asiento {
 
     //devuelve el precio del asiento. Método abstracto
     public abstract double calcularPrecio();
-    public boolean isOcupado() {
-        return ocupado;
-    }
-    public void ocupar(Pasajero pasajero) {
-        this.pasajero = pasajero;
-        this.ocupado = true;
-    }
+//   CHATGPT
+//    public boolean isOcupado() {
+//        return ocupado;
+//    }
+//    public void ocupar(Pasajero pasajero) {
+//        this.pasajero = pasajero;
+//        this.ocupado = true;
+//    }
 }

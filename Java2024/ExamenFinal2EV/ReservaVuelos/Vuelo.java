@@ -61,7 +61,7 @@ Métodos extra:
          this.precioBase = precioBase;
          this.asientosDisponibles = asientosDisponibles;
          this.asientos = new ArrayList<Asiento>();
-         crearAsiento();
+         //crearAsiento();
 
      }
 
@@ -159,40 +159,44 @@ Métodos extra:
      public int hashCode() {
          return Objects.hash(codigo);
      }
-
-     private void crearAsiento(){
-         int numBusiness = (int) (asientosDisponibles *0.3);
-         int numTurista = asientosDisponibles - numBusiness;
-
-         for (int i = 0; i <= numBusiness; i++) {
-             asientos.add(new AsientoBusiness((long)i,precioBase, TipoAsiento.TURISTA, i+i, "LETRA", false));
-         }
-         for (int i = numBusiness + 1; i <= asientosDisponibles; i++) {
-             asientos.add(new AsientoTurista((long)i,precioBase, TipoAsiento.TURISTA, i+i, "LETRA", false));
-         }
-     }
-     public int verificarDisponibilidad(TipoAsiento tipoA) {
-         int disponibles = 0;
-         for (Asiento asiento : asientos){
-             if (asiento.getTipo() == tipoA && !asiento.isOcupado()){
-                 disponibles++;
-
-             }
-         }
-         return disponibles;
-     }
-     public Asiento buscarAsientoDisponible(TipoAsiento tipoasiento) {
-         for (Asiento asiento : asientos) {
-             if (asiento.getTipo() == tipoasiento && !asiento.isOcupado())
-                 return asiento;
-         }
-         return null;
-     }
-     public boolean ocuparAsiento(Pasajero pasajero, Asiento asiento) {
-         if (!asiento.isOcupado()) {
-             asiento.ocupar(pasajero);
-             return true;
-         }
-         return false;
-     }
+//      CHATGPT
+//     private void crearAsiento(){
+//         int numBusiness = (int) (asientosDisponibles *0.3);
+//         int numTurista = asientosDisponibles - numBusiness;
+//
+//    //
+//         for (int i = 0; i <= numBusiness; i++) {
+//             asientos.add(new AsientoBusiness((long)i,precioBase, TipoAsiento.TURISTA, i+i, "LETRA", false));
+//         }
+//         for (int i = numBusiness + 1; i <= asientosDisponibles; i++) {
+//             asientos.add(new AsientoTurista((long)i,precioBase, TipoAsiento.TURISTA, i+i, "LETRA", false));
+//         }
+//     }
+//    CHATGPT
+//    public int verificarDisponibilidad(TipoAsiento tipoA) {
+//         int disponibles = 0;
+//         for (Asiento asiento : asientos){
+//             if (asiento.getTipo() == tipoA && !asiento.isOcupado()){
+//                 disponibles++;
+//
+//             }
+//         }
+//         return disponibles;
+//     }
+//     CHATGPT
+//     public Asiento buscarAsientoDisponible(TipoAsiento tipoasiento) {
+//         for (Asiento asiento : asientos) {
+//             if (asiento.getTipo() == tipoasiento && !asiento.isOcupado())
+//                 return asiento;
+//         }
+//         return null;
+//     }
+     //CHATGPT
+//     public boolean ocuparAsiento(Pasajero pasajero, Asiento asiento) {
+//         if (!asiento.isOcupado()) {
+//             asiento.ocupar(pasajero);
+//             return true;
+//         }
+//         return false;
+//     }
  }
