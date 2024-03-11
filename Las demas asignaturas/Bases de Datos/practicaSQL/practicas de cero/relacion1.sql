@@ -66,13 +66,25 @@ select nom_al, nota from alumno
 inner join relacion on relacion.id_al = alumno.id_al
 inner join profesor on profesor.id_prof = relacion.id_prof where profesor.nom_prof like "FERNANDO GARCIA";
 # 11.- Mostrar todos los alumnos (codigo) que hayan aprobado con el profesor P01.
-select id_al from alumno a
+select a.id_al from alumno a
 inner join relacion r on r.id_al = a.id_al
 inner join profesor p on p.id_prof = r.id_prof where r.nota >= 5 and p.id_prof = "P01";
 # 12.- Mostrar todos los alumnos (nombre) que hayan aprobado con el profesor P01.
-
+select a.nom_al from alumno a
+inner join relacion r on r.id_al = a.id_al
+inner join profesor p on p.id_prof = r.id_prof
+where r.nota >= 5 and p.id_prof like "p01"; 
 # 13.- Mostrar todos los alumnos (nombre) que hayan aprobado con el profesor ‘CARMEN TORRES’.
-
+select a.nom_al from alumno a
+inner join relacion r on r.id_al = a.id_al
+inner join profesor p on p.id_prof = r.id_prof
+where r.nota >= 5 and p.nom_prof like "CARMEN TORRES";
 # 14.- Mostrar el alumno/s que haya obtenido la nota más alta con ‘P01’,
-
+select * from alumno a
+inner join relacion r on r.id_al = a.id_al
+inner join profesor p on r.id_prof = p.id_prof
+order by r.nota desc limit 1;
 # 15.- Mostrar los alumnos (nombre y codigo) que hayan aprobado todo. 
+select a.nom_al, a.id_al from alumno a
+inner join relacion r on r.id_al = a.id_al
+where r.nota >= 5;
