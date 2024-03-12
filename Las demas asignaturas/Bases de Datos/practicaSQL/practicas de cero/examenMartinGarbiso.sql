@@ -62,28 +62,29 @@ VALUES
 
 insert into cli_aloj
 VALUES
-("C01", "A01", "2013-03-01", "2013-03-10", 345),
-("C02", "A01", "2013-04-01", "2013-04-02", 60),
-("C03", "A01", "2013-03-02", "2013-03-11", 540),
-("C04", "A02", "2013-04-03", "2013-04-10", 420),
-("C05", "A02", "2013-05-04", "2013-05-10", 395),
-("C06", "A02", "2013-06-05", "2013-06-10", 145),
-("C07", "A02", "2013-07-06", "2013-07-10", 450),
-("C08", "A03", "2013-08-07", "2013-08-10", 344),
-("C09", "A03", "2013-08-08", "2013-08-10", 349),
-("C10", "A03", "2013-10-09", "2013-10-10", 145),
-("C11", "A03", "2013-11-11", "2013-11-15", 245),
-("C12", "A03", "2013-12-21", "2013-12-30", 600),
-("C01", "A04", "2013-09-05", "2013-09-07", 148),
-("C02", "A03", "2013-10-07", "2013-10-14", 849),
-("C03", "A03", "2013-03-11", "2013-03-15", 248),
-("C04", "A03", "2013-03-21", "2013-03-30", 345),
-("C05", "A01", "2013-03-11", "2013-03-19", 149),
-("C06", "A02", "2013-06-21", "2013-06-30", 315),
-("C01", "A01", "2013-01-11", "2013-01-20", 319),
-("C03", "A04", "2014-O2-14", "2014-02-16", 200),
-("C04", "A05", "2014-02-14", "2014-02-16", 300),
-("C09", "A05", "2014-03-07", "2014-03-09", 400);
+("C01", "A01", "2013-03-01", "2013-03-10", 345)
+("C02", "A01", "2013-04-01", "2013-04-02", 60)
+("C03", "A01", "2013-03-02", "2013-03-11", 540)
+("C04", "A02", "2013-04-03", "2013-04-10", 420)
+("C05", "A02", "2013-05-04", "2013-05-10", 395)
+("C06", "A02", "2013-06-05", "2013-06-10", 145)
+("C07", "A02", "2013-07-06", "2013-07-10", 450)
+("C08", "A03", "2013-08-07", "2013-08-10", 344)
+("C09", "A03", "2013-08-08", "2013-08-10", 349)
+("C10", "A03", "2013-10-09", "2013-10-10", 145)
+("C11", "A03", "2013-11-11", "2013-11-15", 245)
+("C12", "A03", "2013-12-21", "2013-12-30", 600)
+("C01", "A04", "2013-09-05", "2013-09-07", 148)
+("C02", "A03", "2013-10-07", "2013-10-14", 849)
+("C03", "A03", "2013-03-11", "2013-03-15", 248)
+("C04", "A03", "2013-03-21", "2013-03-30", 345)
+("C05", "A01", "2013-03-11", "2013-03-19", 149)
+("C06", "A02", "2013-06-21", "2013-06-30", 315)
+("C01", "A01", "2013-01-11", "2013-01-20", 319)
+("C03", "A04", "2014-02-14", "2014-02-16", 200)
+("C04", "A05", "2014-02-14", "2014-02-16", 300)
+("C09", "A05", "2014-03-07", "2014-03-09", 400)
+
 
 insert into empleado
 values
@@ -105,34 +106,43 @@ select * from empleado where sueldo between 900 and 1200 order by sueldo desc;
 #3. Datos de los empleados cuyo sueldo es mayor que la media de todos los empleados.
 select * from empleado  where sueldo > (select avg(sueldo) from empleado);
 #4. Nombre de los clientes que se han hospedado en el Alojamiento Vera Playa.
-select c.nom_cli from cliente c
+select c.nom_cliente from cliente c
 inner join cli_aloj ca on ca.id_cli = c.id_cli
+inner join alojamiento a on a.id_aloj = ca.id_aloj
+where nom_aloj like "vera playa";
 #5. Nombres de los clientes y dinero total que se han gastado en alojarse.
-
+select c.nom_cliente, sum(ca.precio) as total_Gastos from cliente c
+inner join cli_aloj ca on c.id_cli = ca.id_cli
+group by c.nom_cliente
+order by total_Gastos;
 #6. Nombre de los alojamientos y fechas en los que ha estado hospedado el cliente XAVI PÉREZ, ordenado por el nombre del hotel.
-
+select a.nom_aloj, ca.fech_entrada, ca.fech_salida from alojamiento a
+inner join cli_aloj ca on ca.id_aloj = a.id_aloj
+inner join cliente c on c.id_cli = ca.id_cli
+where c.nom_cliente like "xavi pérez";
 #7. Datos del cliente/s que más establecimientos ha visitado.
-
-#8. Listado de alojamientos, donde aparezca el nombre de cada alojamiento y el
-
-#dinero que ha ganado en los hospedajes ordenados por nombre del alojamiento.
-
+select c.* from cliente c
+inner join cli_aloj ca on c.id_cli = ca.id_cli
+group by c.id_cli
+order by count(ca.id_aloj) desc limit 1; -- hay 3 clientes que han visitado 3 establecimientos, por lo que no es el que más establecimientos visitó
+#8. Listado de alojamientos, donde aparezca el nombre de cada alojamiento y el dinero que ha ganado en los hospedajes ordenados por nombre del alojamiento.
+select a.nom_aloj, sum(ca.precio) as total_Obtenido from alojamiento a
+inner join cli_aloj ca on a.id_aloj = ca.id_aloj
+group by a.nom_aloj
+order by total_Obtenido;
 #9. El nombre del empleado y nombre del alojamiento en que trabaja el empleado que menor sueldo tiene.
-
+select e.nom_emp, e.id_aloj from empleado e
+inner join alojamiento a on e.id_aloj = a.id_aloj
+group by e.nom_emp, e.id_aloj
+order by sueldo asc;
 #10. Nombre del alojamiento o alojamientos con mayor número de empleados.
 
-#11. Listado que contenga la media del sueldo de los empleados por cada
+#11. Listado que contenga la media del sueldo de los empleados por cada alojamiento. Donde aparezca la media del sueldo y el nombre del alojamiento.
 
-#alojamiento. Donde aparezca la media del sueldo y el nombre del alojamiento.
-
-#12. El sueldo de los empleados que trabajan en el alojamiento HOSTAL LUCERO
-
-#se incrementa en un 20% (es decir se actualiza la tabla empleados).
+#12. El sueldo de los empleados que trabajan en el alojamiento HOSTAL LUCERO se incrementa en un 20% (es decir se actualiza la tabla empleados).
 
 #13. El alojamiento Terraza Carmona reduce el número de habitaciones a 75.
 
-#14. Añade un nuevo empleado con los datos que tu quieras menos el sueldo que
-
-#será la media de todos empleados que ya tenemos y el número de empleado que será ‘E10’.
+#14. Añade un nuevo empleado con los datos que tu quieras menos el sueldo que será la media de todos empleados que ya tenemos y el número de empleado que será ‘E10’.
 
 #15. Borra los empleados que trabajen en Terraza Carmona.
