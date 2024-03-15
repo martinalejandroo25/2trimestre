@@ -1,0 +1,33 @@
+/* selector universal */
+* {
+    color: brown;    
+}
+
+/* selector id */
+#selector {
+    propiedad: valor;
+}
+
+/*selector class*/
+.selector{
+    color: violet;
+    background: black;
+}
+
+/*selector de etiqueta*/
+p{
+    color:blue
+}
+
+/*agrupar*/
+
+.selector1, .selector2 {
+    color:brown;
+}
+
+/*selectores multiples*/
+
+.titulo.titulo3 {
+    /*en caso de tener por ejemplo clases asi <p class="titulo titulo3"></p>*/
+}
+

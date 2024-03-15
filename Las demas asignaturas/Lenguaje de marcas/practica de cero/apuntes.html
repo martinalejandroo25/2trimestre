@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><!--etiqueta que no hace nada pero en la que se colocan las cosas importantes  -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <!-- aparecerá en la pestaña de la pagina web lo que pongamos en esta etiqueta -->
+</head>
+
+<body> <!-- Será donde se coloque todo el cuerpo de la pagina, la gran mayoria del codigo  -->
+    <h1>encabezado h1</h1>
+    <h2>encabezado h2</h2>
+    <h3>encabezado h3</h3>
+    <h4>encabezado h4</h4>
+    <h5>encabezado h5</h5>
+    <h6>encabezado h6</h6>
+    <p id="miprimeraweb">Mi primera web con id</p>
+    <p class="miprimeraweb">Mi primera web con class 1</p>
+    <p class="miprimeraweb">Mi primera web con class 2</p>
+    <!-- El id es de un solo uso, mientras que class se puede usar varias veces a lo largo de la pagina -->
+    <style>
+        /*Estilos css, usualmente en una página aparte pero con la etiqueta style podemos hacerlo dentro del propio html*/
+        #miprimeraweb {
+            background: chartreuse;
+        }
+
+        .miprimeraweb {
+            background: blueviolet;
+        }
+    </style>
+    <p>
+        <!-- párrafos simple -->
+        <b>Negrita</b>
+        <strong>Negrita, pero semanticamente más importante</strong>
+        <i>cursiva</i>
+        <em>cursiva, pero semanticamente mas importante</em>
+        <s>texto tachado</s>
+        <small>texto más pequeño o menos importante</small>
+        <br> salto de línea
+        <span style="color: blue;">etiqueta con la que podemos añadir style</span>
+    </p>
+    <a href="https://lenguajehtml.com" target="blank"></a>
+    <!-- a es para insertar un enlace, tanto externo(página de internet) como interno(página local), el enlace lo ponemos en href y, en caso de querer abrir una pestaña nueva para la pagina usamos target -->
+
+    <!-- secciones y div -->
+
+    <!-- enlaces a secciones dentro de la página principal -->
+    <section id="seccion1">
+        <a href="#seccion2"> Ir a seccion 2</a>
+    </section>
+    <div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <section id="seccion2">
+        <a href="#seccion3"> Ir a seccion 3</a>
+    </section>
+    <div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <section id="seccion3">
+        <a href="#seccion1"> Ir a seccion 1</a>
+    </section>
+    <div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <!-- Imagenes -->
+    <img src="multimedia/descarga.webp" alt="imagen de gato" title="imagen de gato">
+    <!-- src para la ruta a la imagen, alt un texto alterno por si la imagen falla, tittle para describir la imagen  -->
+    <a href="https://www.elmundodelgato.com">
+        <img src="multimedia/descarga.webp" alt="imagen de gato" title="imagen de gato">
+        <!-- este será un enlace, pero en vez de texto el enlace se encuentra en la imagen -->
+    </a>
+
+    <!-- listas -->
+
+    <!--listas ordenadas  -->
+    <ol>
+        <li>elemento1</li>
+        <ol>
+            <li></li>
+            <li>secundario1</li>
+            <li>secundario2</li>
+        </ol>
+        <li>elemento2</li>
+        <li>elemento3</li>
+        <li>elemento4</li>
+    </ol>
+
+    <!-- listas desordenadas -->
+    <ul>
+        <li>elemento1</li>
+        <ul>
+            <li>secundario1</li>
+            <li>secundario2</li>
+        </ul>
+        <li>elemento2</li>
+        <li>elemento3</li>
+        <li>elemento4</li>
+    </ul>
+
+    <!-- formularios -->
+    <form>
+        <label>Tu nombre aqui</label><input type="text" placeholder="Escribe tu nombre aqui" required>
+        <!-- required para marcar como obligatorio el dato a rellenar  -->
+        <!-- input para crear un campo; type text para escribir un texto por ejemplo, pero hay más type 
+                placeholder para escribir dentro del input por ejemplo para señalar que es el dato a escribir-->
+        <!-- label para poner texto al lado del input -->
+        <input type="radio" name="SI">
+        <input type="radio" name="NO">
+        <br>
+
+        <!-- para agrupar dentro de un espacio con fieldset -->
+        <fieldset>
+            <input type="text" placeholder="Escribe tu nombre">
+            <input type="date" placeholder="Tu fecha de cumple">
+            <input type="email" placeholder="tu correo electronico">
+        </fieldset>
+
+        <h2>Elegir diferentes opciones</h2>
+        <select>
+            <option value="email">Email</option>
+            <option value="Telefono">telefono</option>
+        </select>
+        <br>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="nombre del boton">
+    </form>
+
+    <div></div> <!-- contenedor de contenido -->
+
+    <main></main> <!-- etiqueta importante, solo debe haber uno por página, es el contenido principal -->
+
+    <section></section> <!-- crear secciones y contenidos en la pagina web -->
+
+    <header></header>
+    <!-- pondremos el logotipo telefonos menu desplegable y cosas que queremos este en la parte de arriba de nuestra web-->
+    <footer></footer>
+    <!-- para poner todo el contenido que queremos este al final de nuestra página web, por ejemplo el copyright -->
+    <nav></nav> <!--poner tipo menú -->
+    <aside></aside> <!-- poner un bloque al lado de tu contenido, tipo blog con wordpress-->
+    <article></article>
+    <!-- se utiliza para poner otra información que aunqe no es tan importante, también la queremos mostrar (ej: algún bloque de últimos articulos o articulos relacionados, comentarios de usuario)-->
+    <img src="multimedia/image.png" alt="" tittle="estructura habitual">
+    <a href="index.html">visualizalo aqui</a>
+
+    <!-- TABLAS -->
+
+    <table>
+        <caption>Alumnos</caption>
+         <tr>         <!-- Fila   -->
+            <th>Nombre</th> <!--Columna, Th es más importante, es el titulo de la columna  -->
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+
+        <tr> <!-- Fila  -->
+            <td>Javier</td> <!--Columna  -->
+            <td>Niguez</td>
+            <td>38</td>
+        </tr>
+
+        <tr>
+            <td>Pablo</td>
+            <td>Martinez</td>
+            <td>25</td>
+        </tr>
+
+    </table>
+
+    <style>
+        th, td, table {
+            border: 1px solid black;
+        }
+    </style>
+
+    <!-- Videos -->
+    <video src="ruta de un video" width="600" poster="imagen de miniatura de video" controls loop></video>
+
+    <audio src="ruta de un audio" controls loops></audio>
+    <!-- controls para poner los controles de reproducción y loops para que se repita cada que termina -->
+</body>
+
+</html>
