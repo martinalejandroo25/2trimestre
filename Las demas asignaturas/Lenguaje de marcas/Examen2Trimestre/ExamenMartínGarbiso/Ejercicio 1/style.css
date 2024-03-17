@@ -1,0 +1,129 @@
+* {
+    font-family: Verdana, Arial, Helvetica, Sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    background-color: white;
+
+}
+
+.header {
+    display: flex;
+    color: #F58220;
+    height: 1.5em;
+}
+
+.header a {
+    color: #F58220;
+}
+
+.header a :visited {
+    text-decoration: none;
+    color: #cccccc;
+}
+
+.header a:hover {
+    text-decoration: none;
+    color: #cccccc;
+}
+
+body {
+    background-color: #F58220;
+}
+
+body p {
+    color: #333333;
+    text-align: justify;
+}
+
+body a {
+    color: #F58220;
+}
+
+
+/*NAVMAP*/
+.navmap a {
+    color: #cccccc;
+}
+
+.navmap ul {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*CATALOGO Y ARCHIVES*/
+.aside {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+.aside h2 {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #3A454C;
+    text-align: right;
+    height: 1.5em;
+    justify-content: center;
+}
+
+.aside ul li {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background: #657983;
+    list-style: square;
+}
+
+.aside a:hover {
+    color: #F58220;
+    text-decoration: none;
+}
+
+.aside a:visited {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+
+/*TITLE*/
+.title {
+    display: flex;
+    flex-direction: column;
+    color: #3A454C;
+}
+
+.title a {
+    display: flex;
+    color: #4c6f85;
+    justify-content: flex-start;
+
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #333333;
+    color: #cccccc;
+}
+
+footer p {
+    color: #cccccc;
+}
+
+footer a {
+    color: #cccccc;
+}
