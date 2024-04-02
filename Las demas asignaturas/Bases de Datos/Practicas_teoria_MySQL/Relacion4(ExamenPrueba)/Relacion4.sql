@@ -9,6 +9,7 @@
 #h) Se han utilizado asistentes, herramientas gráficas y los lenguajes de definición
 #y control de datos.
 #Crear la base de datos Relacion4
+drop database if exists Relacion4;
 create database if not exists Relacion4;
 use Relacion4;
 #Crear la tabla Mecanico
@@ -42,6 +43,7 @@ create table if not exists Pieza(
     NOM_PIEZ char(40),
     ID_TIPO varchar(10),
     foreign key(ID_TIPO) references Tipo(ID_TIPO)
+    on delete cascade on update cascade
 )engine=innodb;
 #Crear la tabla Relacion
 create table if not exists Relacion(
@@ -51,10 +53,14 @@ create table if not exists Relacion(
     ID_PIEZ varchar(3),
     PRECIO double,
     primary key(ID_MEC, MAT_CO, ID_PER, ID_PIEZ),
-    foreign key(ID_MEC) references Mecanico(ID_MEC),
-    foreign key(MAT_CO) references Coche(MAT_CO),
-    foreign key(ID_PER) references Periodo(ID_PER),
+    foreign key(ID_MEC) references Mecanico(ID_MEC)
+    on delete cascade on update cascade,
+    foreign key(MAT_CO) references Coche(MAT_CO)
+    on delete cascade on update cascade,
+    foreign key(ID_PER) references Periodo(ID_PER)
+    on delete cascade on update cascade,
     foreign key(ID_PIEZ) references Pieza(ID_PIEZ)
+    on delete cascade on update cascade
 )engine=innodb;
 insert into Mecanico
 values ("ME1", "JUAN ROMUALDO", 1289, '1970-09-05'),
@@ -154,38 +160,94 @@ group by Pieza.ID_TIPO
 order by count(*) DESC
 LIMIT 1 ;
 #8.- NOMBRE Y TIPO DE LA PIEZA MENOS USADA.
+select p.NOM_PIEZ, t.NOM_TIPO from Pieza p
+inner join Tipo t on t.ID_TIPO = p.ID_TIPO
+inner join (
+			select ID_PIEZ, COUNT(*) NumUsos
+            from Relacion
+            group by ID_PIEZ
+            ORDER BY NumUsos asc limit 1
+) min_usos on min_usos.ID_PIEZ = p.ID_PIEZ;
 
 #9.- MATRICULA, MARCA, MODELO COLOR PIEZA Y TIPO DE TODOS LOS COCHES REPARADOS.
-
-
+select c.*, p.NOM_PIEZ, t.NOM_TIPO from Coche c
+inner join Relacion r on r.MAT_CO = c.MAT_CO
+inner join Pieza p on p.ID_PIEZ = r.ID_PIEZ
+inner join Tipo t on t.ID_TIPO = p.ID_TIPO;
 #10.- MODELO DE PIEZA Y TIPO PUESTAS A ‘0123-BVC’
-
+select p.NOM_PIEZ, t.NOM_TIPO from Pieza p
+inner join Tipo t on t.ID_TIPO = p.ID_TIPO
+inner join Relacion r on r.ID_PIEZ = p.ID_PIEZ
+where MAT_CO like "0123-bvc";
 #11.-DINERO QUE HA GASTADO EN REPARACIONES 1234-CDF
-
+select sum(r.PRECIO) from Relacion r
+where r.MAT_CO like "1234-cdf";
 #12.- DATOS DEL COCHE QUE MAS HA GASTADO EN REPARACIONES
-
+select * from Coche c
+inner join Relacion r on r.MAT_CO = c.MAT_CO
+order by PRECIO desc limit 1;
 #13- DATOS DEL COCHE QUE MENOS HA GASTADO EN REPARACIONES.
-
+select * from Coche c
+inner join Relacion r on r.MAT_CO = c.MAT_CO
+order by PRECIO asc limit 1;
 #14.- DATOS DEL COCHE QUE MENOS HA GASTADO EN EL TALLER.
+select * from Coche c
+inner join (
+			select MAT_CO, count(ID_PIEZ) as ip
+            from relacion r
+            group by MAT_CO
+			) 
+as r on r.MAT_CO = c.MAT_CO 
+order by ip desc limit 1;
 
 #15.- TOTAL DE TODAS LAS REPARACIONES DE ‘ANA LUCAS’.
-
+select count(m.ID_MEC) as numReparaciones FROM Mecanico m
+inner join Relacion r on r.ID_MEC = m.ID_MEC
+where m.NOM_MEC like "Ana Lucas";
 #16.- DATOS DE LOS COCHES Y LAS PIEZAS PUESTAS POR ‘JUAN ROMUALDO’.
-
+Select * from Coche c, Pieza p
+inner join Relacion r on r.MAT_CO = c.MAT_CO
+inner join Mecanico m on m.ID_MEC = r.ID_MEC
+where m.NOM_MEC like "Juan Romualdo";
 #17.- FECHA DE INICIO Y FIN DEL PERIODO EN QUE MAS SE HA TRABAJADO.
-
+select FEC_INI, FEC_FIN, datediff(FEC_FIN, FEC_INI) DuracionP from Periodo p
+order by DuracionP asc limit 1;
 #18.- FECHA DE INICIO Y FIN DEL PERIODO QUE MENOS SE HA TRABAJADO.
-
+select FEC_INI, FEC_FIN, datediff(FEC_FIN, FEC_INI) DuracionP from Periodo p
+order by DuracionP desc limit 1;
 #19.-DINERO QUE SE HA HECHO EN EL PERIODO PE2
-
+select sum(PRECIO) from Relacion r
+where ID_PER like "pe2";
 #20.- DATOS DE LOS COCHES LA QUE SE LE HALLA PUESTO UN EMBRAGE
-
+select * from Coche c
+inner join Relacion r on c.MAT_CO = r.MAT_CO
+inner join Pieza p on p.ID_PIEZ = r.ID_PIEZ
+where p.NOM_PIEZ like "embrage";
 #21.- DATOS DE LOS COCHES A LOS QUE SE LES HALLA CAMBIADO EL ACEITE.
-
+select * from Coche c
+inner join Relacion r on c.MAT_CO = r.MAT_CO
+inner join Pieza p on p.ID_PIEZ = r.ID_PIEZ
+where p.NOM_PIEZ like "aceite";
 #22.- DATOS DE LOS MECANICOS QUE HALLAN PUESTO ALGUNA PIEZA DE TIPO‘ELECTRICIDAD’.
-
+select distinct * from Mecanico m
+inner join Relacion r on m.ID_MEC = r.ID_MEC
+inner join Pieza p on p.ID_PIEZ = r.ID_PIEZ
+inner join Tipo t on t.ID_TIPO = p.ID_TIPO
+where t.NOM_TIPO like "electricidad";
 #23.- MONTANTE ECONOMICO DE TODAS LAS PIEZAS DE TIPO CHAPA.
-
-#24.- TIPODE PIEZA QUE MAS DINERO HA DEJADO EN EL TALLER.
-
+select sum(r.PRECIO) MontanteEco
+from Relacion r
+inner join Pieza p on r.ID_PIEZ = p.ID_PIEZ
+inner join Tipo t on p.ID_TIPO = t.ID_TIPO
+where t.NOM_TIPO like "chapa";
+#24.- TIPO DE PIEZA QUE MAS DINERO HA DEJADO EN EL TALLER.
+select * from Tipo t
+inner join Pieza p on p.ID_TIPO = t.ID_TIPO
+inner join Relacion r on r.ID_PIEZ = p.ID_PIEZ
+Order by PRECIO desc limit 1; 
 #25.-DATOS DEL MECANICO QUE MENOS HA TRABAJADO. 
+select m.*, count(r.ID_MEC) NumReparaciones 
+from Mecanico m
+inner join Relacion r on r.ID_MEC = m.ID_MEC
+group by m.ID_MEC
+order by NumReparaciones asc limit 1;
